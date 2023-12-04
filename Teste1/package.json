@@ -1,0 +1,18 @@
+{
+    "name": "pdv",
+    "version": "1.0.0",
+    "description": "Tarefas teste",
+    "license": "MIT",
+    "scripts": {
+      "node-tsk-install-1":"cd node/code && npx express-generator --force   ",
+      "node-tsk-install-2":"cd node/code && npm install",
+      "node-tsk-install-3": "cd node && podman build . -t ninja-teste1/node-exec",
+      "node-tsk-install":"npm run node-tsk-install-1 && npm run node-tsk-install-2 && npm run node-tsk-install-3",
+      "node-tsk":"cd node && podman run -it -p 3000:3000  ninja-teste1/node-exec",
+      "node-install-run":"npm run node-tsk-install && npm run nod-tsk"
+      },
+    "devDependencies": {
+    },
+    "dependencies": {
+    }
+  }

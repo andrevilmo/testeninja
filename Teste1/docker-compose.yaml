@@ -1,0 +1,18 @@
+version: '2'
+services:
+  node:
+    build: node
+    command: npm start
+    ports:
+      - "3000:3000"
+    networks:
+          backend:
+            ipv4_address: 172.30.0.2
+networks:
+  backend:
+    # Use a custom driver which takes special options
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.30.0.0/16
+         gateway: 172.30.0.1
